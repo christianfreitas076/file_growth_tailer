@@ -1,0 +1,14 @@
+[project]
+name = "file-growth-tailer"
+version = "0.1.0"
+description = "Tails a file across truncation, rotation, and recreation to provide an unbroken read stream."
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
