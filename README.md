@@ -40,3 +40,10 @@ The trade-off: we do not try to match bytes across a rotation. If your logs are 
 - `ReadResult` — frozen dataclass returned by `read()`: `data: bytes`, `position: int`, `inode: int`.
 - `ReopenError` — raised when the file cannot be opened or statted.
 - `PositionNotFound` — reserved for future use; currently not raised by `read()`, but exported so callers can catch it defensively if later versions raise it.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
