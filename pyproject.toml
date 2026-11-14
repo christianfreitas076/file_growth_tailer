@@ -1,6 +1,6 @@
 [project]
 name = "file-growth-tailer"
-version = "0.1.1"
+version = "0.1.2"
 description = "Tails a file across truncation, rotation, and recreation to provide an unbroken read stream."
 requires-python = ">=3.10"
 dependencies = []
